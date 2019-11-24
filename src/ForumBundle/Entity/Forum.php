@@ -57,6 +57,28 @@ class Forum
     }
 
     /**
+     * @ORM\ManyToOne(targetEntity="ForumBundle\Entity\Categories")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $categorie;
+
+    /**
+     * @return mixed
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
+    }
+
+    /**
+     * @param mixed $categorie
+     */
+    public function setCategorie($categorie)
+    {
+        $this->categorie = $categorie;
+    }
+
+    /**
      * Get id
      *
      * @return int

@@ -28,6 +28,26 @@ class Categories
      */
     private $libelle;
 
+    /**
+     * @ORM\OneToMany(targetEntity="ForumBundle\Entity\Forum", mappedBy="categorie")
+     */
+    private $forum;
+
+    /**
+     * @return mixed
+     */
+    public function getForum()
+    {
+        return $this->forum;
+    }
+
+    /**
+     * @param mixed $forum
+     */
+    public function setForum($forum)
+    {
+        $this->forum = $forum;
+    }
 
     /**
      * Get id
