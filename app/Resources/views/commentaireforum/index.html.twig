@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Commentforums list</h1>
+    <h1>Commentaireforums list</h1>
 
     <table>
         <thead>
@@ -12,17 +12,17 @@
             </tr>
         </thead>
         <tbody>
-        {% for commentForum in commentForums %}
+        {% for commentaireForum in commentaireForums %}
             <tr>
-                <td><a href="{{ path('comment_show', { 'id': commentForum.id }) }}">{{ commentForum.id }}</a></td>
-                <td>{{ commentForum.texte }}</td>
+                <td><a href="{{ path('commentaireforum_show', { 'id': commentaireForum.id }) }}">{{ commentaireForum.id }}</a></td>
+                <td>{{ commentaireForum.texte }}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('comment_show', { 'id': commentForum.id }) }}">show</a>
+                            <a href="{{ path('commentaireforum_show', { 'id': commentaireForum.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('comment_edit', { 'id': commentForum.id }) }}">edit</a>
+                            <a href="{{ path('commentaireforum_edit', { 'id': commentaireForum.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>
@@ -33,7 +33,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('comment_new') }}">Create a new commentForum</a>
+            <a href="{{ path('commentaireforum_new') }}">Create a new commentaireForum</a>
         </li>
     </ul>
 {% endblock %}

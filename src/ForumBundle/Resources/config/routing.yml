@@ -1,4 +1,4 @@
 forum_comment:
-    resource: "@ForumBundle/Resources/config/routing/commentforum.yml"
+    resource: "@ForumBundle/Resources/config/routing/commentaireforum.yml"
     prefix:   /comment
 
