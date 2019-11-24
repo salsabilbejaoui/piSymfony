@@ -87,5 +87,6 @@ class CommentForum
     {
         return $this->texte;
     }
+
 }
 
