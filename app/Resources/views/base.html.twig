@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('T/favicon.ico') }}" />
+
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="description" content="Aviato E-Commerce Template">
+
+        <meta name="author" content="Themefisher.com">
+
+        <title>Aviato | E-commerce template</title>
+
+        <!-- Mobile Specific Meta-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href=src="{{ asset('T/images/favicon.png') }}" />
+
+        <!-- Themefisher Icon font -->
+        <link rel="stylesheet" href="{{ asset('T/plugins/themefisher-font/style.css') }}">
+        <!-- bootstrap.min css -->
+        <link rel="stylesheet" href="{{ asset('T/plugins/bootstrap/css/bootstrap.min.css') }}">
+
+        <!-- Revolution Slider -->
+        <link rel="stylesheet" type="text/css" href="{{ asset ('T/plugins/revolution-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset ('T/plugins/revolution-slider/revolution/fonts/font-awesome/css/font-awesome.css') }}">
+
+        <!-- REVOLUTION STYLE SHEETS -->
+        <link rel="stylesheet" type="text/css" href="{{ asset ('T/plugins/revolution-slider/revolution/css/settings.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset ('T/plugins/revolution-slider/revolution/css/layers.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset ('T/plugins/revolution-slider/revolution/css/navigation.css') }}">
+
+        <!-- Main Stylesheet -->
+        <link rel="stylesheet" href="{{ asset ('T/css/style.css') }}">
+
+
+
+</head>
+<section class="top-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-xs-12 col-sm-4">
+                <div class="contact-number">
+                    <i class="tf-ion-ios-telephone"></i>
+                    <span>0129- 12323-123123</span>
+                </div>
+            </div>
+            <div class="col-md-4 col-xs-12 col-sm-4">
+                <!-- Site Logo -->
+                <div class="logo text-center">
+                    <a href="index-2.html">
+                        <!-- replace logo here -->
+                        <svg width="135px" height="29px" viewBox="0 0 155 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="40" font-family="AustinBold, Austin" font-weight="bold">
+                                <g id="Group" transform="translate(-108.000000, -297.000000)" fill="#000000">
+                                    <text id="AVIATO">
+                                        <tspan x="108.94" y="325">AVIATO</tspan>
+                                    </text>
+                                </g>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-xs-12 col-sm-4">
+                <!-- Cart -->
+                <ul class="top-menu text-right list-inline">
+                    <li class="dropdown cart-nav dropdown-slide">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i class="tf-ion-android-cart"></i>Cart</a>
+                        <div class="dropdown-menu cart-dropdown">
+                            <!-- Cart Item -->
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <img  class="media-object" src="{{ asset ('T/images/shop/cart/cart-1.jpg') }}" alt="image" />
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading"><a href="#">Ladies Bag</a></h4>
+                                    <div class="cart-price">
+                                        <span>1 x</span>
+                                        <span>1250.00</span>
+                                    </div>
+                                    <h5><strong>$1200</strong></h5>
+                                </div>
+                                <a href="#" class="remove"><i class="tf-ion-close"></i></a>
+                            </div><!-- / Cart Item -->
+                            <!-- Cart Item -->
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <img  class="media-object" src="{{ asset ('T/images/shop/cart/cart-2.jpg" alt="image" ') }}" />
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading"><a href="#">Ladies Bag</a></h4>
+                                    <div class="cart-price">
+                                        <span>1 x</span>
+                                        <span>1250.00</span>
+                                    </div>
+                                    <h5><strong>$1200</strong></h5>
+                                </div>
+                                <a href="#" class="remove"><i class="tf-ion-close"></i></a>
+                            </div><!-- / Cart Item -->
+
+                            <div class="cart-summary">
+                                <span>Total</span>
+                                <span class="total-price">$1799.00</span>
+                            </div>
+                            <ul class="text-center cart-buttons">
+                                <li><a href="#" class="btn btn-small">View Cart</a></li>
+                                <li><a href="#" class="btn btn-small btn-solid-border">Checkout</a></li>
+                            </ul>
+                        </div>
+
+                    </li><!-- / Cart -->
+
+                    <!-- Search -->
+                    <li class="dropdown search dropdown-slide">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i class="tf-ion-ios-search-strong"></i> Search</a>
+                        <ul class="dropdown-menu search-dropdown">
+                            <li><form action="http://demo.themefisher.com/themefisher/aviato/post"><input type="search" class="form-control" placeholder="Search..."></form></li>
+                        </ul>
+                    </li><!-- / Search -->
+
+                    <!-- Languages -->
+                    <li class="commonSelect">
+                        <select class="form-control">
+                            <option>EN</option>
+                            <option>DE</option>
+                            <option>FR</option>
+                            <option>ES</option>
+                        </select>
+                    </li><!-- / Languages -->
+
+                </ul><!-- / .nav .navbar-nav .navbar-right -->
+            </div>
+        </div>
+    </div>
+</section><!-- End Top Header Bar -->
+
+{% block body %}{% endblock %}
+{% block javascripts %}{% endblock %}
+
+<footer class="footer section text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="social-media">
+                    <li>
+                        <a href="#">
+                            <i class="tf-ion-social-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="tf-ion-social-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="tf-ion-social-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="tf-ion-social-pinterest"></i>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="footer-menu">
+                    <li>
+                        <a href="#">CONTACT</a>
+                    </li>
+                    <li>
+                        <a href="#">SHIPPING</a>
+                    </li>
+                    <li>
+                        <a href="#">TERMS OF SERVICE</a>
+                    </li>
+                    <li>
+                        <a href="#">PRIVACY POLICY</a>
+                    </li>
+                </ul>
+                <p class="copyright-text">Powered by Bootstrap</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--
+Essential Scripts
+=====================================-->
+
+<!-- Main jQuery -->
+<script src="{{ asset('T/plugins/jquery/dist/jquery.min.js') }}"></script>
+<!-- Bootstrap 3.1 -->
+<script src="{{ asset('T/plugins/bootstrap/js/bootstrap.min.js') }}" ></script>
+<!-- Bootstrap Touchpin -->
+<script src="{{ asset('T/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js') }}"></script>
+<!-- Instagram Feed Js -->
+<script src="{{ asset('T/plugins/instafeed-js/instafeed.min.js') }}"></script>
+<!-- Video Lightbox Plugin -->
+<script src="{{ asset('T/plugins/ekko-lightbox/dist/ekko-lightbox.min.js') }}"></script>
+<!-- Count Down Js -->
+<script src="{{ asset('T/plugins/SyoTimer/build/jquery.syotimer.min.js') }}"></script>
+
+<!-- Revolution Slider -->
+<script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/jquery.themepunch.tools.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/jquery.themepunch.revolution.min.js') }}"></script>
+
+<!-- Revolution Slider -->
+<script type="text/javascript" src="{{ asset('T/"plugins/revolution-slider/revolution/js/extensions/revolution.extension.actions.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/extensions/revolution.extension.carousel.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/extensions/revolution.extension.migration.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/extensions/revolution.extension.navigation.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/extensions/revolution.extension.parallax.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/extensions/revolution.extension.video.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/extensions/revolution.extension.video.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/assets/warning.js') }}"></script>
+
+
+
+<!-- Google Mapl -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<script type="text/javascript" src="plugins/google-map/gmap.js"></script>
+
+<!-- Main Js File -->
+<script src="js/script.js"></script>
+
+
+
+</body>
+</html>

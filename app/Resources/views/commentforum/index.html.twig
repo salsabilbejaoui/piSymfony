@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Commentforums list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Texte</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for commentForum in commentForums %}
+            <tr>
+                <td><a href="{{ path('comment_show', { 'id': commentForum.id }) }}">{{ commentForum.id }}</a></td>
+                <td>{{ commentForum.texte }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('comment_show', { 'id': commentForum.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('comment_edit', { 'id': commentForum.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('comment_new') }}">Create a new commentForum</a>
+        </li>
+    </ul>
+{% endblock %}
