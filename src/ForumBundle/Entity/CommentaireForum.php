@@ -5,12 +5,12 @@ namespace ForumBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * CommentForum
+ * CommenatireForum
  *
- * @ORM\Table(name="comment_forum")
- * @ORM\Entity(repositoryClass="ForumBundle\Repository\CommentForumRepository")
+ * @ORM\Table(name="commenatire_forum")
+ * @ORM\Entity(repositoryClass="ForumBundle\Repository\CommenatireForumRepository")
  */
-class CommentForum
+class CommentaireForum
 {
     /**
      * @var int
@@ -24,12 +24,18 @@ class CommentForum
     /**
      * @var string
      *
-     * @ORM\Column(name="texte", type="string", length=255)
+     * @ORM\Column(name="texte", type="string", length=255, nullable=true)
      */
     private $texte;
 
     /**
-     * @return \AppBundle\Entity\User
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $user;
+
+    /**
+     * @return mixed
      */
     public function getUser()
     {
@@ -37,22 +43,33 @@ class CommentForum
     }
 
     /**
-     * @param \AppBundle\Entity\User $user
+     * @param mixed $user
      */
     public function setUser($user)
     {
         $this->user = $user;
     }
     /**
-     * @var \AppBundle\Entity\User
-     *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id")
-     * })
+     * @ORM\ManyToOne(targetEntity="ForumBundle\Entity\Forum")
+     * @ORM\JoinColumn(nullable=true)
      */
+    private $forum;
 
-    private $user;
+    /**
+     * @return mixed
+     */
+    public function getForum()
+    {
+        return $this->forum;
+    }
+
+    /**
+     * @param mixed $forum
+     */
+    public function setForum($forum)
+    {
+        $this->forum = $forum;
+    }
 
     /**
      * Get id
@@ -69,7 +86,7 @@ class CommentForum
      *
      * @param string $texte
      *
-     * @return CommentForum
+     * @return CommentaireForum
      */
     public function setTexte($texte)
     {

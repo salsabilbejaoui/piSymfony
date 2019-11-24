@@ -1,5 +1,10 @@
+forum_commentaire_forum:
+    resource: "@ForumBundle/Controller/CommentaireForumController.php"
+    type:     annotation
+
 forum:
     resource: "@ForumBundle/Resources/config/routing.yml"
+    prefix: /forum
 
 app:
     resource: '@AppBundle/Controller/'

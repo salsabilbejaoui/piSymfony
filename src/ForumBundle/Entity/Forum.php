@@ -22,67 +22,39 @@ class Forum
     private $id;
 
     /**
-     * @return \AppBundle\Entity\User
-     */
-    public function getUser()
-    {
-        return $this->user;
-    }
-
-    /**
-     * @param \AppBundle\Entity\User $user
-     */
-    public function setUser($user)
-    {
-        $this->user = $user;
-    }
-    /**
-     * @var \AppBundle\Entity\User
-     *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id")
-     * })
-     */
-
-    private $user;
-    /**
      * @var string
      *
-     * @ORM\Column(name="Title", type="string", length=255)
+     * @ORM\Column(name="title", type="string", length=255, nullable=true)
      */
     private $title;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Image", type="string", length=255)
+     * @ORM\Column(name="image", type="string", length=255, nullable=true)
      */
-    private $Image;
+    private $image;
 
     /**
-     * @return string
+     * @ORM\OneToMany(targetEntity="ForumBundle\Entity\CommentaireForum", mappedBy="forum")
      */
-    public function getImage()
+    private $commentaires;
+
+    /**
+     * @return mixed
+     */
+    public function getCommentaires()
     {
-        return $this->Image;
+        return $this->commentaires;
     }
 
     /**
-     * @param string $Image
+     * @param mixed $commentaires
      */
-    public function setImage($Image)
+    public function setCommentaires($commentaires)
     {
-        $this->Image = $Image;
+        $this->commentaires = $commentaires;
     }
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="Date", type="datetime")
-     */
-    private $date;
-
 
     /**
      * Get id
@@ -119,81 +91,27 @@ class Forum
     }
 
     /**
-     * Set date
+     * Set image
      *
-     * @param \DateTime $date
+     * @param string $image
      *
      * @return Forum
      */
-    public function setDate($date)
+    public function setImage($image)
     {
-        $this->date = $date;
+        $this->image = $image;
 
         return $this;
     }
 
     /**
-     * Get date
+     * Get image
      *
-     * @return \DateTime
+     * @return string
      */
-    public function getDate()
+    public function getImage()
     {
-        return $this->date;
+        return $this->image;
     }
-
-    /**
-     * @var \ForumBundle\Entity\Categories
-     *
-     * @ORM\ManyToOne(targetEntity="ForumBundle\Entity\Categories")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_categorie", referencedColumnName="id")
-     * })
-     */
-
-    private $Categories;
-
-    /**
-     * @return Categories
-     */
-    public function getCategories()
-    {
-        return $this->Categories;
-    }
-
-    /**
-     * @param Categories $Categories
-     */
-    public function setCategories($Categories)
-    {
-        $this->Categories = $Categories;
-    }
-    /**
-     * @var \ForumBundle\Entity\CommentForum
-     *
-     * @ORM\ManyToOne(targetEntity="ForumBundle\Entity\CommentForum")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_comment", referencedColumnName="id")
-     * })
-     */
-
-    private $CommentForum;
-
-    /**
-     * @return CommentForum
-     */
-    public function getCommentForum()
-    {
-        return $this->CommentForum;
-    }
-
-    /**
-     * @param CommentForum $CommentForum
-     */
-    public function setCommentForum($CommentForum)
-    {
-        $this->CommentForum = $CommentForum;
-    }
-
 }
 
