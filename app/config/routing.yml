@@ -1,3 +1,8 @@
+njareb:
+    resource: "@NjarebBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 forum:
     resource: "@ForumBundle/Resources/config/routing.yml"
 

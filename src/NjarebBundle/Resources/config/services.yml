@@ -1,0 +1,4 @@
+services:
+#    njareb.example:
+#        class: NjarebBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
