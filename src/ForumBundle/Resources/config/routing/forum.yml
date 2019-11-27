@@ -6,7 +6,7 @@ forum_index:
 forum_show:
     path:     /{id}/show
     defaults: { _controller: "ForumBundle:Forum:show" }
-    methods:  GET
+    methods:  [GET, POST]
 
 forum_new:
     path:     /new

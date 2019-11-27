@@ -38,6 +38,8 @@ class CommentaireForumController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted()) {
+
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($commentaireForum);
             $em->flush();

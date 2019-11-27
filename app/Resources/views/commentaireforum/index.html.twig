@@ -1,39 +1,40 @@
-{% extends 'base.html.twig' %}
 
-{% block body %}
-    <h1>Commentaireforums list</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Texte</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for commentaireForum in commentaireForums %}
-            <tr>
-                <td><a href="{{ path('commentaireforum_show', { 'id': commentaireForum.id }) }}">{{ commentaireForum.id }}</a></td>
-                <td>{{ commentaireForum.texte }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('commentaireforum_show', { 'id': commentaireForum.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('commentaireforum_edit', { 'id': commentaireForum.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('commentaireforum_new') }}">Create a new commentaireForum</a>
-        </li>
-    </ul>
-{% endblock %}
+    <div class="post-comments">
+        <h3 class="post-sub-heading">10 Comments</h3>
+        <ul class="media-list comments-list m-bot-50 clearlist">
+            {% for commentaireForum in commentaireForums %}
+            <!-- Comment Item start-->
+            <li class="media">
+
+                <a class="pull-left" href="#">
+                    <img class="media-object comment-avatar" src="{{ commentaireForum.user.image }}" alt="" width="50" height="50">
+                </a>
+
+                <div class="media-body">
+                    <div class="comment-info">
+                        <h4 class="comment-author">
+                            <a href="#">{{commentaireForum.user}}</a>
+
+                        </h4>
+                        <time>July 02, 2015, at 11:34</time>
+                        <a class="comment-button" href="#"><i class="tf-ion-chatbubbles"></i>Reply</a>
+                    </div>
+
+                    <p>
+                       {{commentaireForum.texte}}
+                    </p>
+
+
+                </div>
+
+            </li>
+            {% endfor %}
+            <!-- End Comment Item -->
+
+
+
+
+        </ul>
+    </div>

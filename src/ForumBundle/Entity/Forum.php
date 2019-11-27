@@ -2,6 +2,7 @@
 
 namespace ForumBundle\Entity;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -34,6 +35,29 @@ class Forum
      * @ORM\Column(name="image", type="string", length=255, nullable=true)
      */
     private $image;
+
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=255, nullable=true)
+     */
+    private $description;
 
     /**
      * @ORM\OneToMany(targetEntity="ForumBundle\Entity\CommentaireForum", mappedBy="forum")
@@ -135,5 +159,32 @@ class Forum
     {
         return $this->image;
     }
+
+    /**
+     * @return DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param DateTime $date
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    }
+    /**
+     * @var DateTime
+     *
+     * @ORM\Column(name="date", type="date")
+     */
+    private $date;
+    public function __construct()
+    {
+        $this->date = new DateTime();
+    }
 }
+
 

@@ -1,36 +1,116 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Forum</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ forum.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ forum.title }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td>{{ forum.image }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="content">
+                        <h1 class="page-name">Forum</h1>
+                        <ol class="breadcrumb">
+                            <li><a href="{{ path('homepage') }}">Home</a></li>
+                            <li class="active">blog</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <ul>
-        <li>
-            <a href="{{ path('forum_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('forum_edit', { 'id': forum.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
+
+
+
+
+
+
+    <section class="page-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="post post-single">
+                        <div class="post-thumb">
+                            <img class="img-responsive"   src="{{ asset('uploads/images/') ~ forum.image }}" >
+                        </div>
+                            <td>{{ forum.title }}</td>
+
+                        <div class="post-meta">
+                            <ul>
+                                <li>
+                                    <i class="tf-ion-ios-calendar"></i> {{forum.date|date('Y-m-d')}}
+                                </li>
+                                <li>
+                                    <i class="tf-ion-android-person"></i> POSTED BY ADMIN
+                                </li>
+                                <li>
+                                    <a href="#"><i class="tf-ion-ios-pricetags"></i></a>
+                                    {{ forum.categorie.libelle }}
+                                </li>
+                                <li>
+                                    <a href="#"><i class="tf-ion-chatbubbles"></i> 4 COMMENTS</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="post-content post-excerpt">
+
+                            <blockquote class="quote-post">
+                                <p>
+                                    {{ forum.description }}
+                                </p>
+                            </blockquote>
+
+                            {% include 'commentaireforum/index.html.twig' %}
+{#                            {% include 'commentaireforum/new.html.twig' with {'form': 'form'} only %}#}
+
+
+
+
+                        <div class="post-comments-form">
+                            <h3 class="post-sub-heading">Leave You Comments</h3>
+                            <form method="post" action="#" id="form" role="form" >
+
+                                <div class="row">
+
+                                    <div class="col-md-6 form-group">
+
+
+                                        {{ render(controller('ForumBundle:CommentaireForum:new')) }}
+
+                                </div>
+                                </div>
+                            </form>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+        <ul>
+            <li>
+                <a href="{{ path('forum_index') }}">Back to the list</a>
+            </li>
+            <li>
+                <a href="{{ path('forum_edit', { 'id': forum.id }) }}">Edit</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}
                 <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+                {{ form_end(delete_form) }}
+            </li>
+        </ul>
+    </section>
+
+
+
+
+
+
+
+
 {% endblock %}

@@ -29,7 +29,7 @@
                     </ul>
                 </td>
             </tr>
-        {% endfor %}
+
         </tbody>
     </table>
 
@@ -38,4 +38,37 @@
             <a href="{{ path('forum_new') }}">Create a new forum</a>
         </li>
     </ul>
+
+
+
+
+<div class="post">
+    <div class="post-media post-thumb">
+        <a href="blog-single.html">
+          <center>  <img  src="{{ asset('uploads/images/') ~ forum.image }}" style="width: 400px"></center>
+        </a>
+    </div>
+    <h2 class="post-title"><a href="blog-single.html">{{ forum.title }}</a></h2>
+    <div class="post-meta">
+        <ul>
+            <li>
+                <i class="tf-ion-ios-calendar"></i> {{ forum.date|date('d-m-y') }}
+            </li>
+            <li>
+                <i class="tf-ion-android-person"></i> POSTED BY ADMIN
+            </li>
+            <li>
+                <a href="#"><i class="tf-ion-ios-pricetags"></i> {{ forum.categorie.libelle }}</a>
+            </li>
+            <li>
+                <a href="#"><i class="tf-ion-chatbubbles"></i> 4 COMMENTS</a>
+            </li>
+        </ul>
+    </div>
+    <div class="post-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit vitae placeat ad architecto nostrum asperiores vel aperiam, veniam eum nulla. Maxime cum magnam, adipisci architecto quibusdam cumque veniam fugiat quae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio vitae ab doloremque accusamus sit, eos dolorum officiis a perspiciatis aliquid. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, facere</p>
+        <a href="blog-single.html" class="btn btn-main">Continue Reading</a>
+    </div>
+</div>
+        {% endfor %}
 {% endblock %}

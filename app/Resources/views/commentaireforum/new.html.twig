@@ -1,11 +1,10 @@
-{% extends 'base.html.twig' %}
 
-{% block body %}
     <h1>Commentforum creation</h1>
-    {{ form_start(form) }}
     <div class="post-comments-form">
         <h3 class="post-sub-heading">Leave You Comments</h3>
-        <form method="post" action="#" id="form" role="form" >
+        <form method="post" action="{{ path('commentaireforum_new') }}" id="form" role="form" >
+            {{ form_start(form) }}
+
             <div class="row">
                 <!-- Comment -->
                 <div class="form-group col-md-12">
@@ -14,7 +13,7 @@
                     {{ form_errors(form.texte) }}
                 </div>
             </div>
-            <input type="submit" value="Create" class="btn btn-small btn-main"/>
+            {{ form_widget(form.Submit) }}
         </form>
     </div>
 
@@ -25,4 +24,4 @@
             <a href="{{ path('commentaireforum_index') }}">Back to the list</a>
         </li>
     </ul>
-{% endblock %}
+

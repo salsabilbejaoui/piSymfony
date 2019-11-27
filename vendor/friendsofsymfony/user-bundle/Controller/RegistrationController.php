@@ -70,9 +70,8 @@ class RegistrationController extends Controller
         $form->setData($user);
 
         $form->handleRequest($request);
-        if ($form->isSubmitted()) {
 
-            if ($form->isValid()) {
+        if ($form->isSubmitted()) {
                 $event = new FormEvent($form, $request);
                 $this->eventDispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
 
@@ -86,7 +85,7 @@ class RegistrationController extends Controller
                 $this->eventDispatcher->dispatch(FOSUserEvents::REGISTRATION_COMPLETED, new FilterUserResponseEvent($user, $request, $response));
 
                 return $response;
-            }
+
 
             $event = new FormEvent($form, $request);
             $this->eventDispatcher->dispatch(FOSUserEvents::REGISTRATION_FAILURE, $event);

@@ -1,3 +1,10 @@
+opinion_opinion:
+    resource: "@OpinionBundle/Controller/FeedbackController.php"
+    type:     annotation
+opinion:
+    resource: "@OpinionBundle/Resources/config/routing.yml"
+    prefix:   /opinion
+
 forum_commentaire_forum:
     resource: "@ForumBundle/Controller/CommentaireForumController.php"
     type:     annotation
