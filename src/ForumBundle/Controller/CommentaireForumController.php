@@ -37,7 +37,7 @@ class CommentaireForumController extends Controller
         $form = $this->createForm('ForumBundle\Form\CommentaireForumType', $commentaireForum);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($commentaireForum);
             $em->flush();

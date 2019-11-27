@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Forums list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for forum in forums %}
+            <tr>
+                <td><a href="{{ path('forum_show', { 'id': forum.id }) }}">{{ forum.id }}</a></td>
+                <td>{{ forum.title }}</td>
+                <td>{{ forum.image }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('forum_show', { 'id': forum.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('forum_edit', { 'id': forum.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('forum_new') }}">Create a new forum</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,4 +1,4 @@
-<?php
+hp
 
 namespace ForumBundle\Repository;
 

@@ -2,3 +2,6 @@ forum_comment:
     resource: "@ForumBundle/Resources/config/routing/commentaireforum.yml"
     prefix:   /comment
 
+forum_forum:
+    resource: "@ForumBundle/Resources/config/routing/forum.yml"
+    prefix:   /publication
