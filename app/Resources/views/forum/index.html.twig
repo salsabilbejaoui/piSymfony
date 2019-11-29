@@ -2,38 +2,168 @@
 
 {% block body %}
     <h1>Posts</h1>
-
-        {% for forum in forums %}
-
-
-<div class="post">
-    <div class="post-media post-thumb">
-        <a href="blog-single.html">
-          <center>  <img  src="{{ asset('uploads/images/') ~ forum.image }}" style="width: 400px"></center>
-        </a>
+    <div class="page-wrapper">
+        <div class="container">
+            <div class="row">
+                {% if (forums|length)==1 %}
+                        <div class="col-md-6">
+                            <div class="post">
+                                <div class="post-thumb">
+                                    <a href="#">
+                                        <img class="img-responsive" src="{{ asset('uploads/images/') ~ forums[0].image }}" alt="">
+                                    </a>
+                                </div>
+                                <h2 class="post-title"><a href="#">{{ forums[0].title }}</a></h2>
+                                <div class="post-meta">
+                                    <ul>
+                                        <li>
+                                            <i class="tf-ion-ios-calendar"></i> {{ forums[0].date|date('d-m-y') }}
+                                        </li>
+                                        <li>
+                                            <i class="tf-ion-android-person"></i> POSTED BY {{forums[0].user}}
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="tf-ion-ios-pricetags"></i> {{ forums[0].categorie.libelle }}</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="tf-ion-chatbubbles"></i> 4 COMMENTS</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="post-content">
+                                    <p>{{ forums[0].description }}</p>
+                                    <a href="{{ path('forum_show', { 'id': forums[0].id }) }}" class="btn btn-main">Continue Reading </a>
+                                </div>
+                            </div>
+                        </div>
+                {% elseif (forums|length)==2 %}
+                        <div class="col-md-6">
+                            <div class="post">
+                                <div class="post-thumb">
+                                    <a href="#">
+                                        <img class="img-responsive" src="{{ asset('uploads/images/') ~ forums[0].image }}" alt="">
+                                    </a>
+                                </div>
+                                <h2 class="post-title"><a href="#">{{ forums[0].title }}</a></h2>
+                                <div class="post-meta">
+                                    <ul>
+                                        <li>
+                                            <i class="tf-ion-ios-calendar"></i> {{ forums[0].date|date('d-m-y') }}
+                                        </li>
+                                        <li>
+                                            <i class="tf-ion-android-person"></i> POSTED BY {{forums[0].user}}
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="tf-ion-ios-pricetags"></i> {{ forums[0].categorie.libelle }}</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="tf-ion-chatbubbles"></i> 4 COMMENTS</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="post-content">
+                                    <p>{{ forums[0].description }}</p>
+                                    <a href="{{ path('forum_show', { 'id': forums[0].id }) }}" class="btn btn-main">Continue Reading </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="post">
+                                <div class="post-thumb">
+                                    <a href="#">
+                                        <img class="img-responsive" src="{{ asset('uploads/images/') ~ forums[1].image }}" alt="">
+                                    </a>
+                                </div>
+                                <h2 class="post-title"><a href="#">{{ forums[1].title }}</a></h2>
+                                <div class="post-meta">
+                                    <ul>
+                                        <li>
+                                            <i class="tf-ion-ios-calendar"></i> {{ forums[1].date|date('d-m-y') }}
+                                        </li>
+                                        <li>
+                                            <i class="tf-ion-android-person"></i> POSTED BY {{forums[1].user}}
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="tf-ion-ios-pricetags"></i> {{ forums[1].categorie.libelle }}</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="tf-ion-chatbubbles"></i> 4 COMMENTS</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="post-content">
+                                    <p>{{ forums[1].description }}</p>
+                                    <a href="{{ path('forum_show', { 'id': forums[1].id }) }}" class="btn btn-main">Continue Reading </a>
+                                </div>
+                            </div>
+                        </div>
+                {% else %}
+                    {% for i in range(0,(forums|length)-1,2) %}
+                            <div class="col-md-6">
+                                <div class="post">
+                                    <div class="post-thumb">
+                                        <a href="#">
+                                            <img class="img-responsive" src="{{ asset('uploads/images/') ~ forums[i].image }}" alt="">
+                                        </a>
+                                    </div>
+                                    <h2 class="post-title"><a href="#">{{ forums[i].title }}</a></h2>
+                                    <div class="post-meta">
+                                        <ul>
+                                            <li>
+                                                <i class="tf-ion-ios-calendar"></i> {{ forums[i].date|date('d-m-y') }}
+                                            </li>
+                                            <li>
+                                                <i class="tf-ion-android-person"></i> POSTED BY {{forums[i].user}}
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="tf-ion-ios-pricetags"></i> {{ forums[i].categorie.libelle }}</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="tf-ion-chatbubbles"></i> 4 COMMENTS</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="post-content">
+                                        <p id="{{ forums[i].id }}">{{ forums[i].description }}</p>
+                                        <a href="{{ path('forum_show', { 'id': forums[i].id }) }}" class="btn btn-main">Continue Reading </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% if i<(forums|length)-1 %}
+                            <div class="col-md-6">
+                                <div class="post">
+                                    <div class="post-thumb">
+                                        <a href="#">
+                                            <img class="img-responsive" src="{{ asset('uploads/images/') ~ forums[i+1].image }}" alt="">
+                                        </a>
+                                    </div>
+                                    <h2 class="post-title"><a href="#">{{ forums[i+1].title }}</a></h2>
+                                    <div class="post-meta">
+                                        <ul>
+                                            <li>
+                                                <i class="tf-ion-ios-calendar"></i> {{ forums[i+1].date|date('d-m-y') }}
+                                            </li>
+                                            <li>
+                                                <i class="tf-ion-android-person"></i> POSTED BY {{forums[i+1].user}}
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="tf-ion-ios-pricetags"></i> {{ forums[i+1].categorie.libelle }}</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="tf-ion-chatbubbles"></i> 4 COMMENTS</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="post-content">
+                                        <p>{{ forums[i+1].description }}</p>
+                                        <a href="{{ path('forum_show', { 'id': forums[i+1].id }) }}" class="btn btn-main">Continue Reading </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                {% endfor %}
+            {% endif %}
+            </div>
+        </div>
     </div>
-    <h2 class="post-title"><a href="blog-single.html">{{ forum.title }}</a></h2>
-    <div class="post-meta">
-        <ul>
-            <li>
-                <i class="tf-ion-ios-calendar"></i> {{ forum.date|date('d-m-y') }}
-            </li>
-            <li>
-                <i class="tf-ion-android-person"></i> Posted By {{forum.user}}
-            </li>
-            <li>
-                <a href="#"><i class="tf-ion-ios-pricetags"></i> {{ forum.categorie.libelle }}</a>
-            </li>
-            <li>
-                <a href="#"><i class="tf-ion-chatbubbles"></i> 4 COMMENTS</a>
-            </li>
-        </ul>
-    </div>
-    <div class="post-content">
-        <p>{{ forum.description }}</p>
-        <a href="{{ path('forum_show', { 'id': forum.id }) }}" class="btn btn-main">Continue Reading </a>
-    </div>
-</div>
-        {% endfor %}
-
 {% endblock %}

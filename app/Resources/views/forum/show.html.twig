@@ -61,16 +61,13 @@
 
                             {% include 'commentaireforum/index.html.twig' %}
 
-                        <div class="post-comments-form">
-                            <h3 class="post-sub-heading">Leave You Comments</h3>
-
+                        <div class="post-comments-form" id="add" style="visibility: hidden;">
                                 <div class="row">
-
                                     <div class="col-md-6 form-group">
                                         <form method="post" action="{{ path('commentaireforum_new',{'id':forum.id}) }}"  id="form" role="form" >
                                         {{ render(controller('ForumBundle:CommentaireForum:new',{'id':forum.id})) }}
                                         </form>
-                                </div>
+                                    </div>
                                 </div>
 
                         </div>
@@ -98,7 +95,6 @@
             </li>
         </ul>
     </section>
-
 
 
 

@@ -76,7 +76,7 @@ class ForumController extends Controller
     public function showAction(Forum $forum)
     {
 
-
+        $commentaireForum = new CommentaireForum();
         $em = $this->getDoctrine()->getManager();
         $deleteForm = $this->createDeleteForm($forum);
         $commentaireForums = $em->getRepository('ForumBundle:CommentaireForum')->findByForum($forum->getId());
@@ -84,6 +84,7 @@ class ForumController extends Controller
             'forum' => $forum,
             'delete_form' => $deleteForm->createView(),
             'commentaireForums' => $commentaireForums,
+            'form'=> $form = $this->createForm('ForumBundle\Form\CommentaireForumType', $commentaireForum)->createView(),
 
         ));
     }
