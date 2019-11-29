@@ -40,7 +40,7 @@
                                     <i class="tf-ion-ios-calendar"></i> {{forum.date|date('Y-m-d')}}
                                 </li>
                                 <li>
-                                    <i class="tf-ion-android-person"></i> POSTED BY ADMIN
+                                    <i class="tf-ion-android-person"></i> Posted By {{forum.user}}
                                 </li>
                                 <li>
                                     <a href="#"><i class="tf-ion-ios-pricetags"></i></a>
@@ -60,10 +60,6 @@
                             </blockquote>
 
                             {% include 'commentaireforum/index.html.twig' %}
-{#                            {% include 'commentaireforum/new.html.twig' with {'form': 'form'} only %}#}
-
-
-
 
                         <div class="post-comments-form">
                             <h3 class="post-sub-heading">Leave You Comments</h3>

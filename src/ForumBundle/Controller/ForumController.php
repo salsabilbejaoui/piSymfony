@@ -47,7 +47,7 @@ class ForumController extends Controller
             $filename = $this->generateUniqueFileName().'.'.$file->guessExtension();
             $file->move($this->getParameter('images_directory'),$filename);
             $forum->setImage($filename);
-
+            $forum->setUser($this->getUser());
             $em = $this->getDoctrine()->getManager();
             $em->persist($forum);
             $em->flush();

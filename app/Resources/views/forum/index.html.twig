@@ -1,45 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Forums list</h1>
+    <h1>Posts</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Image</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
         {% for forum in forums %}
-            <tr>
-                <td><a href="{{ path('forum_show', { 'id': forum.id }) }}">{{ forum.id }}</a></td>
-                <td>{{ forum.title }}</td>
-                <td>{{ forum.image }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('forum_show', { 'id': forum.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('forum_edit', { 'id': forum.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('forum_new') }}">Create a new forum</a>
-        </li>
-    </ul>
-
-
 
 
 <div class="post">
@@ -55,7 +19,7 @@
                 <i class="tf-ion-ios-calendar"></i> {{ forum.date|date('d-m-y') }}
             </li>
             <li>
-                <i class="tf-ion-android-person"></i> POSTED BY ADMIN
+                <i class="tf-ion-android-person"></i> Posted By {{forum.user}}
             </li>
             <li>
                 <a href="#"><i class="tf-ion-ios-pricetags"></i> {{ forum.categorie.libelle }}</a>
@@ -66,9 +30,10 @@
         </ul>
     </div>
     <div class="post-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit vitae placeat ad architecto nostrum asperiores vel aperiam, veniam eum nulla. Maxime cum magnam, adipisci architecto quibusdam cumque veniam fugiat quae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio vitae ab doloremque accusamus sit, eos dolorum officiis a perspiciatis aliquid. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, facere</p>
-        <a href="blog-single.html" class="btn btn-main">Continue Reading</a>
+        <p>{{ forum.description }}</p>
+        <a href="{{ path('forum_show', { 'id': forum.id }) }}" class="btn btn-main">Continue Reading </a>
     </div>
 </div>
         {% endfor %}
+
 {% endblock %}

@@ -127,9 +127,6 @@
                     <li class="commonSelect">
                         <select class="form-control">
                             <option>EN</option>
-                            <option>DE</option>
-                            <option>FR</option>
-                            <option>ES</option>
                         </select>
                     </li><!-- / Languages -->
 
@@ -138,6 +135,7 @@
         </div>
     </div>
 </section><!-- End Top Header Bar -->
+
 
 {% block body %}{% endblock %}
 {% block javascripts %}{% endblock %}
@@ -210,7 +208,7 @@ Essential Scripts
 <script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/jquery.themepunch.revolution.min.js') }}"></script>
 
 <!-- Revolution Slider -->
-<script type="text/javascript" src="{{ asset('T/"plugins/revolution-slider/revolution/js/extensions/revolution.extension.actions.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/extensions/revolution.extension.actions.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/extensions/revolution.extension.carousel.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
@@ -229,7 +227,7 @@ Essential Scripts
 <script type="text/javascript" src="plugins/google-map/gmap.js"></script>
 
 <!-- Main Js File -->
-<script src="js/script.js"></script>
+<script src="{{ asset('T/js/script.js') }}"></script>
 
 
 
