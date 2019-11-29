@@ -33,13 +33,14 @@ class CommentaireForumController extends Controller
      */
     public function newAction(Request $request)
     {
+
         $commentaireForum = new Commentaireforum();
         $form = $this->createForm('ForumBundle\Form\CommentaireForumType', $commentaireForum);
         $form->handleRequest($request);
 
         if ($form->isSubmitted()) {
 
-
+            $commentaireForum->setUser($this->getUser());
             $em = $this->getDoctrine()->getManager();
             $em->persist($commentaireForum);
             $em->flush();
