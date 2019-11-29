@@ -2,7 +2,7 @@
     <h1>Commentforum creation</h1>
     <div class="post-comments-form">
         <h3 class="post-sub-heading">Leave You Comments</h3>
-        <form method="post" action="{{ path('commentaireforum_new') }}" id="form" role="form" >
+        <form method="post" action="{{ path('commentaireforum_new') }}"  id="form" role="form" >
             {{ form_start(form) }}
 
             <div class="row">
@@ -14,10 +14,11 @@
                 </div>
             </div>
             {{ form_widget(form.Submit) }}
+            {{ form_end(form) }}
         </form>
     </div>
 
-    {{ form_end(form) }}
+
 
     <ul>
         <li>
