@@ -1,0 +1,8 @@
+event_event:
+    resource: "@EventBundle/Resources/config/routing/eventblog.yml"
+    prefix:   /blog
+
+reservation:
+     resource: "@EventBundle/Resources/config/routing/reservation.yml"
+     prefix:   /reservation
+
