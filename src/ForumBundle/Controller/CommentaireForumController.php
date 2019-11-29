@@ -3,6 +3,7 @@
 namespace ForumBundle\Controller;
 
 use ForumBundle\Entity\CommentaireForum;
+use ForumBundle\Entity\Forum;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -31,7 +32,7 @@ class CommentaireForumController extends Controller
      * Creates a new commentaireForum entity.
      *
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request, Forum $forum)
     {
 
         $commentaireForum = new Commentaireforum();
@@ -39,8 +40,8 @@ class CommentaireForumController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted()) {
-
             $commentaireForum->setUser($this->getUser());
+            $commentaireForum->setForum($forum);
             $em = $this->getDoctrine()->getManager();
             $em->persist($commentaireForum);
             $em->flush();

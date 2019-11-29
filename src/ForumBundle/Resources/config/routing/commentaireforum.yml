@@ -9,7 +9,7 @@ commentaireforum_show:
     methods:  GET
 
 commentaireforum_new:
-    path:     /new
+    path:     /new/{id}
     defaults: { _controller: "ForumBundle:CommentaireForum:new" }
     methods:  [GET, POST]
 
