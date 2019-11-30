@@ -58,7 +58,7 @@ class RegistrationController extends Controller
     {
         $user = $this->userManager->createUser();
         $user->setEnabled(true);
-
+        $user->addRole('ROLE_SIMPLE_USER');
         $event = new GetResponseUserEvent($user, $request);
         $this->eventDispatcher->dispatch(FOSUserEvents::REGISTRATION_INITIALIZE, $event);
 
@@ -67,11 +67,15 @@ class RegistrationController extends Controller
         }
 
         $form = $this->formFactory->createForm();
+
+
         $form->setData($user);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted()) {
+
+            dump($user);die;
                 $event = new FormEvent($form, $request);
                 $this->eventDispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
 
