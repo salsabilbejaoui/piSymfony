@@ -17,7 +17,7 @@
         <div class="feedback main-grid-border">
             <div class="container">
     <br>
-               <center> <h2 class="w3-head">Evaluation</h2></center>
+               <center> <h2 class="w3-head">Rate Our Forum</h2></center>
                 <div class="feed-back">
 
 
@@ -25,13 +25,18 @@
 
 
                         <div >
-                            <h3 >Donner nous votre avis et n'oublier pas de nous noter ! </h3>
+                            <h3 ></h3>
 
                             {{ form_start(form) }}
+                            <div class="row">
                             <div class="post-comments-form">
-                                <h3 class="post-sub-heading">Leave You opinion</h3>
-
+                                <center> {% include"@Opinion/Opinion/rating.html.twig" %} </center>
+<center>
+                                <h3 class="post-sub-heading"> Give us your Feedback </h3>
+</center>
                                     <div class="row">
+
+                                        <br>
                                         <!-- Comment -->
                                         <div class="form-group col-md-12">
                                             {{ form_label(form.contenu ) }}
@@ -39,11 +44,11 @@
                                             {{ form_errors(form.contenu) }}
                                         </div>
                                     </div>
-                                <input class="btn btn-main btn-large btn-round-full " type="submit" value="Confirmer" id="send" >
-                                <div class="col-md-6">
-                                    <label id ="err"  style="color: black;size: 10px"   >N'oubliez pas de nous noté </label>
-                                    {% include"@Opinion/Opinion/rating.html.twig" %}
-                                </div>
+                               <center>
+                                   <input class="btn btn-main btn-large btn-round-full " type="submit" value="Send" id="send" >
+                                </center>
+                                <br><br><br>
+
 
                             </div>
 
@@ -69,11 +74,16 @@
                             {{ form_end(form) }}
                         </div>
 
-                    <br><br><br><br>
+                    <br><br>
+
                         <div>
                             <a href="{{ path('opinion_aff') }}">
-                                <h2 style="color:cornflowerblue;text-decoration: underline" >   Ce que pensent les autres?</h2>
+                               <center>
+                                <h2 style="color:cornflowerblue;text-decoration: underline" class="align-center" >   What Other People Think About Us ?</h2>
+                               </center>
                             </a></div>
+                        <br><br>
+
 
                     </div>
                     <div >

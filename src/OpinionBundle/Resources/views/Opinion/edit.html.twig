@@ -1,4 +1,4 @@
-{% extends '::Admin.html.twig' %}
+{% extends 'baseadmin.html.twig' %}
 
 {% block body %}
    <center> <h1>Opinion edit</h1></center>
@@ -15,7 +15,7 @@
             {{ form_end(delete_form) }}
         </li>
         <li>
-            <a href="{{ path('opinion_index') }}">Retour à la liste</a>
+            <a href="{{ path('opinion_index') }}">Back to list</a>
         </li>
 
     </ul></center>
