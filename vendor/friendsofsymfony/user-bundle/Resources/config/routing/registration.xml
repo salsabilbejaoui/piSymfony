@@ -8,6 +8,10 @@
         <default key="_controller">fos_user.registration.controller:registerAction</default>
     </route>
 
+    <route id="fos_user_registration_admin_register" path="/admin" methods="GET POST">
+        <default key="_controller">fos_user.registration.controller:registerAdminAction</default>
+    </route>
+
     <route id="fos_user_registration_check_email" path="/check-email" methods="GET">
         <default key="_controller">fos_user.registration.controller:checkEmailAction</default>
     </route>
