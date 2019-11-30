@@ -24,7 +24,7 @@ class ForumController extends Controller
 
         $forums = $em->getRepository('ForumBundle:Forum')->findAll();
 
-        return $this->render('forum/showadmin.html.twig', array(
+        return $this->render('index_admin.html.twig', array(
             'forums' => $forums,
         ));
     }
