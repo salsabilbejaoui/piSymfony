@@ -1,3 +1,7 @@
+event_event:
+    resource: "@EventBundle/Resources/config/routing.yml"
+    prefix:   /event
+
 opinion_opinion:
     resource: "@OpinionBundle/Controller/FeedbackController.php"
     type:     annotation
@@ -7,6 +11,10 @@ opinion:
 
 forum_commentaire_forum:
     resource: "@ForumBundle/Controller/CommentaireForumController.php"
+    type:     annotation
+
+reservation:
+    resource: "@EventBundle/Controller/ReservationController.php"
     type:     annotation
 
 forum:

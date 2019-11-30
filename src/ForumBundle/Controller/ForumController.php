@@ -29,6 +29,17 @@ class ForumController extends Controller
         ));
     }
 
+    public function indexAdminAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $forums = $em->getRepository('ForumBundle:Forum')->findAll();
+
+        return $this->render('forum/index_admin.html.twig', array(
+            'forums' => $forums,
+        ));
+    }
+
     /**
      * Creates a new forum entity.
      *
@@ -88,6 +99,8 @@ class ForumController extends Controller
 
         ));
     }
+
+
 
     /**
      * Displays a form to edit an existing forum entity.

@@ -1,3 +1,168 @@
+{#{% trans_default_domain 'FOSUserBundle' %}#}
+
+{#{% if error %}#}
+{#    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
+{#{% endif %}#}
+
+{#<form action="{{ path("fos_user_security_check") }}" method="post">#}
+{#    {% if csrf_token %}#}
+{#        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />#}
+{#    {% endif %}#}
+
+{#    <label for="username">{{ 'security.login.username'|trans }}</label>#}
+{#    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />#}
+
+{#    <label for="password">{{ 'security.login.password'|trans }}</label>#}
+{#    <input type="password" id="password" name="_password" required="required" autocomplete="current-password" />#}
+
+{#    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />#}
+{#    <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>#}
+
+{#    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />#}
+{#</form>#}
+
+
+{#{% trans_default_domain 'FOSUserBundle' %}#}
+
+{#{% if error %}#}
+{#    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
+{#{% endif %}#}
+
+{#<form action="{{ path("fos_user_security_check") }}" method="post">#}
+{#    {% if csrf_token %}#}
+{#        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />#}
+{#    {% endif %}#}
+{#<!-- Mirrored from www.bootstrapdash.com/demo/breeze/jquery/template/demo_1/pages/samples/login-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 29 Nov 2019 12:53:19 GMT -->#}
+
+{#    <meta charset="utf-8">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">#}
+{#    <title>Login Page</title>#}
+{#    <!-- plugins:css -->#}
+{#    <link rel="stylesheet" href="{{ asset('assets/vendors/mdi/css/materialdesignicons.min.css') }}">#}
+{#    <link rel="stylesheet" href="{{ asset('assets/vendors/css/vendor.bundle.base.css') }}">#}
+{#    <!-- endinject -->#}
+{#    <!-- Plugin css for this page -->#}
+{#    <!-- End plugin css for this page -->#}
+{#    <!-- inject:css -->#}
+{#    <!-- endinject -->#}
+{#    <!-- Layout styles -->#}
+{#    <link rel="stylesheet" href="{{ asset('assets/css/demo_1/style.css') }}">#}
+{#    <!-- End layout styles -->#}
+{#    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" />#}
+
+{#<div class="container-scroller">#}
+{#    <div class="container-fluid page-body-wrapper full-page-wrapper">#}
+{#        <div class="content-wrapper d-flex align-items-stretch auth auth-img-bg">#}
+{#            <div class="row flex-grow">#}
+{#                <div class="col-lg-6 d-flex align-items-center justify-content-center">#}
+{#                    <div class="auth-form-transparent text-left p-3">#}
+{#                        <div class="brand-logo">#}
+{#                            <center><img src="{{ asset('T/images/logofashionblog.png') }}" alt="logo" ></center>#}
+
+{#                        </div>#}
+{#                        <h4>Welcome back!</h4>#}
+{#                        <h6 class="font-weight-light">Happy to see you again!</h6>#}
+{#                        <form class="pt-3">#}
+{#                            <div class="form-group">#}
+{#                                <label for="exampleInputEmail">Username</label>#}
+{#                                <div class="input-group">#}
+{#                                    <div class="input-group-prepend bg-transparent">#}
+{#                        <span class="input-group-text bg-transparent border-right-0">#}
+{#                          <i class="mdi mdi-account-outline text-primary"></i>#}
+{#                        </span>#}
+{#                                    </div>#}
+{#   <input type="text" id="username" name="_username" {{ 'security.login.username'|trans }} required="required" autocomplete="username" class="form-control form-control-lg border-left-0" id="" placeholder="Username"/>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="form-group">#}
+{#                                <label for="exampleInputPassword">Password</label>#}
+{#                                <div class="input-group">#}
+{#                                    <div class="input-group-prepend bg-transparent">#}
+{#                        <span class="input-group-text bg-transparent border-right-0">#}
+{#                          <i class="mdi mdi-lock-outline text-primary"></i>#}
+{#                        </span>#}
+{#                                    </div>#}
+{#                                    <input {{ 'security.login.password'|trans }} type="password" id="password" name="_password" required="required"   autocomplete="current-password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Password" />#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="my-2 d-flex justify-content-between align-items-center">#}
+{#                                <div class="form-check">#}
+{#                                    <label class="form-check-label text-muted" ></label>#}
+{#                                        <input type="checkbox"  class="form-check-input"> Keep me signed in </label>#}
+
+
+{#                                </div>#}
+{#                                <a href="#" class="auth-link text-black">Forgot password?</a>#}
+{#                            </div>#}
+{#                            <div class="my-3">#}
+{#                                <input type="submit" id="_submit" name="_submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" value="{{ 'security.login.submit'|trans }}" />#}
+
+{#                            </div>#}
+
+{#                            <div class="text-center mt-4 font-weight-light"> Don't have an account? <a href="{{ path('fos_user_registration_register') }}" class="text-primary">Create</a>#}
+{#                            </div>#}
+{#                        </form>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="col-lg-6 login-half-bg d-flex flex-row">#}
+{#                    <p class="text-white font-weight-medium text-center flex-grow align-self-end">Copyright &copy; CodeBreakers.</p>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#        <!-- content-wrapper ends -->#}
+{#    </div>#}
+{#    <!-- page-body-wrapper ends -->#}
+{#</div>#}
+{#<!-- container-scroller -->#}
+{#<!-- plugins:js -->#}
+{#<script src="{{ asset('assets/vendors/js/vendor.bundle.base.js') }}"></script>#}
+{#<!-- endinject -->#}
+{#<!-- Plugin js for this page -->#}
+{#<!-- End plugin js for this page -->#}
+{#<!-- inject:js -->#}
+{#<script src="{{ asset('assets/js/off-canvas.js') }}"></script>#}
+{#<script src="{{ asset('assets/js/hoverable-collapse.js') }}"></script>#}
+{#<script src="{{ asset('assets/js/misc.js') }}"></script>#}
+{#<script src="{{ asset('assets/js/settings.js') }}"></script>#}
+{#<script src="{{ asset('assets/js/todolist.js') }}"></script>#}
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Aviato E-Commerce Template">
+
+    <meta name="author" content="Themefisher.com">
+
+    <title>Aviato | E-commerce template</title>
+
+    <!-- Mobile Specific Meta-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href=src="{{ asset('T/images/favicon.png') }}" />
+
+    <!-- Themefisher Icon font -->
+    <link rel="stylesheet" href="{{ asset('T/plugins/themefisher-font/style.css') }}">
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" href="{{ asset('T/plugins/bootstrap/css/bootstrap.min.css') }}">
+
+    <!-- Revolution Slider -->
+    <link rel="stylesheet" type="text/css" href="{{ asset ('T/plugins/revolution-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset ('T/plugins/revolution-slider/revolution/fonts/font-awesome/css/font-awesome.css') }}">
+
+    <!-- REVOLUTION STYLE SHEETS -->
+    <link rel="stylesheet" type="text/css" href="{{ asset ('T/plugins/revolution-slider/revolution/css/settings.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset ('T/plugins/revolution-slider/revolution/css/layers.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset ('T/plugins/revolution-slider/revolution/css/navigation.css') }}">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{{ asset ('T/css/style.css') }}">
+
+</head>
+
+<body id="body">
+
+
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% if error %}
@@ -9,14 +174,70 @@
         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
     {% endif %}
 
-    <label for="username">{{ 'security.login.username'|trans }}</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
+<section class="signin-page account">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="block text-center">
+                    <a class="logo" href="index-2.html">
+                        <img src="{{ asset('T/images/logofashionblog.png') }}" style="width: 200px" >
+                    </a>
+                    <h2 class="text-center">Welcome Back</h2>
+                    <form class="text-left clearfix" action="http://demo.themefisher.com/themefisher/aviato/index.html" >
+                        <div class="form-group">
 
-    <label for="password">{{ 'security.login.password'|trans }}</label>
-    <input type="password" id="password" name="_password" required="required" autocomplete="current-password" />
+                                <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" class="form-control" placeholder="Username"  />
+                        </div>
+                        <div class="form-group">
+                            <input placeholder="Password" type="password"  class="form-control" id="password" name="_password" required="required" autocomplete="current-password" />
+                        </div>
+                        <div class="text-center">
 
-    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-    <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+                            <input type="submit" id="_submit" name="_submit" class="btn btn-main text-center" value="{{ 'security.login.submit'|trans }}" />
+                        </div>
+                    </form>
+                    <p class="mt-20">New in this site ?<a href={{ path('fos_user_registration_register') }}> Create New Account</a></p>
 
-    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ asset('T/plugins/jquery/dist/jquery.min.js') }}"></script>
+    <!-- Bootstrap 3.1 -->
+    <script src="{{ asset('T/plugins/bootstrap/js/bootstrap.min.js') }}" ></script>
+    <!-- Bootstrap Touchpin -->
+    <script src="{{ asset('T/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js') }}"></script>
+    <!-- Instagram Feed Js -->
+    <script src="{{ asset('T/plugins/instafeed-js/instafeed.min.js') }}"></script>
+    <!-- Video Lightbox Plugin -->
+    <script src="{{ asset('T/plugins/ekko-lightbox/dist/ekko-lightbox.min.js') }}"></script>
+    <!-- Count Down Js -->
+    <script src="{{ asset('T/plugins/SyoTimer/build/jquery.syotimer.min.js') }}"></script>
+
+    <!-- Revolution Slider -->
+    <script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/jquery.themepunch.tools.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/jquery.themepunch.revolution.min.js') }}"></script>
+
+    <!-- Revolution Slider -->
+    <script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/extensions/revolution.extension.actions.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/extensions/revolution.extension.carousel.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/extensions/revolution.extension.migration.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/extensions/revolution.extension.navigation.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/extensions/revolution.extension.parallax.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/extensions/revolution.extension.video.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/revolution/js/extensions/revolution.extension.video.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('T/plugins/revolution-slider/assets/warning.js') }}"></script>
+
+
+
+    <!-- Google Mapl -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+    <script type="text/javascript" src="plugins/google-map/gmap.js"></script>
+
+    <!-- Main Js File -->
+    <script src="{{ asset('T/js/script.js') }}"></script>
+</section>
 </form>

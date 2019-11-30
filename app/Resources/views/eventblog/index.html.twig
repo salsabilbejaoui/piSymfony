@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Eventblogs list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Image</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for eventBlog in eventBlogs %}
+            <tr>
+                <td><a href="{{ path('event_show', { 'id': eventBlog.id }) }}">{{ eventBlog.id }}</a></td>
+                <td>{{ eventBlog.title }}</td>
+                <td>{{ eventBlog.description }}</td>
+                <td>{% if eventBlog.date %}{{ eventBlog.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ eventBlog.image }}</td>
+                <td>{{ eventBlog.address }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('event_show', { 'id': eventBlog.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('event_edit', { 'id': eventBlog.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('event_new') }}">Create a new eventBlog</a>
+        </li>
+    </ul>
+{% endblock %}
