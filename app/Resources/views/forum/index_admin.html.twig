@@ -1,8 +1,25 @@
 {% extends 'baseadmin.html.twig' %}
 
 {% block body %}
+<script>
+    function editForum(id){
+        var editId      =   id;
+        var path        =   "{{ path('forum_admin_edit', {'id': 'id_to_edit'}) }}";
+        path            =   path.replace('id_to_edit',editId);
+        $("#editForm").attr('action',path);
+        $("#forumbundle_forum_title").val('');
+        $("#forumbundle_forum_description").val('');
+        $("#forumbundle_forum_categorie").val('');
+    }
+    function deleteForum(id){
+        var deleteID      =   id;
+        var path            =   "{{ path('forum_admin_delete', {'id': 'id_to_edit'}) }}";
+        path                =   path.replace('id_to_edit',deleteID);
+        $("#deleteForm").attr('action',path);
+    }
 
-
+</script>
+    {% include 'forum/delete.html.twig' %}
     <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
         {#        <div class="alert alert-light alert-elevate" role="alert">#}
         {#            <div class="alert-icon"><i class="flaticon-warning kt-font-brand"></i></div>#}
@@ -102,10 +119,13 @@
                         <th>{{ forum.user }}</th>
 
                         <th>
-                            <a href="{{ path('forum_edit', { 'id': forum.id }) }}"><span class="flaticon-edit"></span></a>
-                            <a href="{{ path('forum_delete', { 'id': forum.id }) }}"><span class="flaticon2-delete"></span></a>
+
+                            <a><span class="flaticon-edit" data-toggle="modal" data-target="#kt_blockui_roles_modal" onclick="editForum({{ forum.id }})"></span></a>
+
+                            <a><span class="flaticon2-delete" data-toggle="modal" data-target="#kt_blockui_delete_modal" onclick="deleteForum({{ forum.id }})"></span></a>
                         </th>
                     </tr>
+                        {{ render(controller('ForumBundle:forum:editAdmin',{'id':forum.id})) }}
                     {% endfor %}
                     </thead>
                 </table>

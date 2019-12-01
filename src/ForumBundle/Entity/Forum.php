@@ -60,7 +60,7 @@ class Forum
     private $description;
 
     /**
-     * @ORM\OneToMany(targetEntity="ForumBundle\Entity\CommentaireForum", mappedBy="forum")
+     * @ORM\OneToMany(targetEntity="ForumBundle\Entity\CommentaireForum", mappedBy="forum", cascade={"remove"})
      */
     private $commentaires;
 

@@ -125,6 +125,23 @@ class ForumController extends Controller
         ));
     }
 
+    public function editAdminAction(Request $request, Forum $forum)
+    {
+        $editForm = $this->createForm('ForumBundle\Form\ForumAdminType', $forum);
+        $editForm->handleRequest($request);
+
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('forum_admin_index');
+        }
+
+        return $this->render('forum/edit_admin.html.twig', array(
+            'forum' => $forum,
+            'edit_form' => $editForm->createView(),
+        ));
+    }
+
     /**
      * Deletes a forum entity.
      *
@@ -141,6 +158,19 @@ class ForumController extends Controller
         }
 
         return $this->redirectToRoute('forum_index');
+    }
+    public function deleteAdminAction(Request $request, Forum $forum)
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($forum);
+        try {
+            $entityManager->flush();
+        }catch(\Exception $e)
+        {
+            var_dump($e->getMessage());die;
+        }
+
+        return $this->redirectToRoute('forum_admin_index');
     }
 
     /**
