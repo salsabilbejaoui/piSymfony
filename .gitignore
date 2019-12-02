@@ -27,3 +27,4 @@
 /vendor/twig/
 /vendor/swiftmailer/
 .idea/workspace
+/web/uploads/images/
