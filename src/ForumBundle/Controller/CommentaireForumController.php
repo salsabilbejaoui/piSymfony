@@ -20,7 +20,6 @@ class CommentaireForumController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
         $commentaireForums = $em->getRepository('ForumBundle:CommentaireForum')->findAll();
 
         return $this->render('commentaireforum/index.html.twig', array(
