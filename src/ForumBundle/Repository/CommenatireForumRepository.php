@@ -10,4 +10,5 @@ namespace ForumBundle\Repository;
  */
 class CommenatireForumRepository extends \Doctrine\ORM\EntityRepository
 {
+
 }
