@@ -4,6 +4,8 @@ namespace ForumBundle\Controller;
 
 use ForumBundle\Entity\CommentaireForum;
 use ForumBundle\Entity\Forum;
+use ForumBundle\Repository\ForumRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,25 +20,35 @@ class ForumController extends Controller
      * Lists all forum entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
 
         $forums = $em->getRepository('ForumBundle:Forum')->findAll();
-
+        $paginator = $this->get('knp_paginator');
+        $forumsPaginate  =   $paginator  ->paginate(
+            $forums,
+            $request->query->getInt('page',1),
+            4
+        );
         return $this->render('forum/index.html.twig', array(
-            'forums' => $forums,
+            'forums' => $forumsPaginate,
         ));
     }
 
-    public function indexAdminAction()
+    public function indexAdminAction(Request $request)
     {
+
         $em = $this->getDoctrine()->getManager();
-
+        $paginator = $this->get('knp_paginator');
         $forums = $em->getRepository('ForumBundle:Forum')->findAll();
-
+        $forumsPaginate  =   $paginator  ->paginate(
+            $forums,
+            $request->query->getInt('page',1),
+            4
+        );
         return $this->render('forum/index_admin.html.twig', array(
-            'forums' => $forums,
+            'forums' => $forumsPaginate,
         ));
     }
 
