@@ -13,8 +13,8 @@
     }
     function deleteForum(id){
         var deleteID      =   id;
-        var path            =   "{{ path('forum_admin_delete', {'id': 'id_to_edit'}) }}";
-        path                =   path.replace('id_to_edit',deleteID);
+        var path            =   "{{ path('forum_admin_delete', {'id': 'id_to_delete'}) }}";
+        path                =   path.replace('id_to_delete',deleteID);
         $("#deleteForm").attr('action',path);
     }
 
@@ -102,7 +102,7 @@
 
                         <th>Title</th>
 
-                        <th>Picture</th>
+                        <th>Description</th>
 
                         <th>Posted By</th>
 
@@ -115,12 +115,13 @@
 
                         <th> {{ forum.title }}</th>
 
-                        <th> {{ forum.image }}</th>
-                        <th>{{ forum.user }}</th>
+                        <th> {{ forum.description }}</th>
+
+                        <th> {{ forum.user }} </th>
 
                         <th>
 
-                            <a><span class="flaticon-edit" data-toggle="modal" data-target="#kt_blockui_roles_modal" onclick="editForum({{ forum.id }})"></span></a>
+                            <a><span class="flaticon-edit" data-toggle="modal" data-target="#kt_blockui_forum_modal" onclick="editForum({{ forum.id }})"></span></a>
 
                             <a><span class="flaticon2-delete" data-toggle="modal" data-target="#kt_blockui_delete_modal" onclick="deleteForum({{ forum.id }})"></span></a>
                         </th>
@@ -129,7 +130,9 @@
                     {% endfor %}
                     </thead>
                 </table>
-
+                <div>
+                    {{ knp_pagination_render(forums) }}
+                </div>
                 <!--end: Datatable -->
             </div>
         </div>

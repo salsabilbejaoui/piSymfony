@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new ForumBundle\ForumBundle(),
             new OpinionBundle\OpinionBundle(),
             new EventBundle\EventBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
